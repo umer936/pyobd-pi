@@ -34,6 +34,15 @@ def throttle_pos(code):
     code = hex_to_int(code)
     return code * 100.0 / 255.0
 
+def air_temp(code):
+    code = hex_to_int(code)
+    c = code - 40 
+    return 32 + (9 * c / 5) 
+
+def torque(code):
+    code = hex_to_int(code)
+    return code
+
 def intake_m_pres(code): # in kPa
     code = hex_to_int(code)
     return code / 0.14504
